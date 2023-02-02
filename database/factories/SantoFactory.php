@@ -17,7 +17,10 @@ class SantoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "nome" => fake () -> name() ,
+            "luogo_di_nascita" => fake () -> city(),
+            "data_benedizione" => fake () -> dateTime(),
+            "numero_miracoli" => fake () -> numberBetween(5, 20) ,
         ];
     }
 }
