@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public function home() {
 
-        $santi = Santo::all();
+        $santi = Santo::orderBy('numero_miracoli') -> get();
 
         $data = [
             'santi' => $santi
