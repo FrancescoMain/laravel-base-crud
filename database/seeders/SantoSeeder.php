@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use app\Models\Santo;
 class SantoSeeder extends Seeder
 {
     /**
@@ -14,6 +14,6 @@ class SantoSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Santo::factory()->count(100) -> create();
     }
 }
