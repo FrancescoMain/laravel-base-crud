@@ -21,7 +21,12 @@ class MainController extends Controller
     public function show($id) {
 
         $santo = Santo::find($id);
-        return view('pages.santo');
+
+        $data = [
+            'santo' => $santo
+        ];
+
+        return view('pages.santo', $data);
     }
 }
 
