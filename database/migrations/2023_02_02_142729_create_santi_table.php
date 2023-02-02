@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('santi', function (Blueprint $table) {
+
             $table->id();
+            $table-> string('nome' , 32);
+            $table-> string('luogo_di_nascita' , 32);
+            $table-> date('data_benedizione');
+            $table->integer('numero_miracoli') -> unsigned();
             $table->timestamps();
+
         });
     }
 
