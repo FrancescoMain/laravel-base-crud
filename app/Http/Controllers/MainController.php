@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Santo;
 
 class MainController extends Controller
 {
     public function home() {
-        return view('pages.home');
+
+        $santi = Santo::all();
+
+        $data = [
+            'santi' => $santi
+        ];
+        return view('pages.home' , $data);
     } 
 }
