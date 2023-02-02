@@ -16,4 +16,12 @@ class MainController extends Controller
         ];
         return view('pages.home' , $data);
     } 
+
+
+    public function show($id) {
+
+        $santo = Santo::find($id);
+        var_dump($santo); die();
+    }
 }
+
