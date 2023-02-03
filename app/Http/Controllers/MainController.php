@@ -38,6 +38,30 @@ class MainController extends Controller
 
         return redirect() -> route('home');
     }
+
+     // --- CREATE
+    public function santoCreate() {
+
+        return view('pages.santoCreate');
+    }
+
+    public function santoStore(Request $request) {
+
+        $data = $request->all();
+
+
+        $santo = new Santo();
+
+        $santo -> nome = $data['nome'];
+        $santo -> luogo_di_nascita = $data['luogo_di_nascita'];
+        $santo -> data_benedizione = $data['data_benedizione'];
+        $santo -> numero_miracoli = $data['numero_miracoli'];
+
+        $santo -> save();
+        
+        return redirect() -> route('home');
+    }
+
 }
 
 
