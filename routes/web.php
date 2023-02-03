@@ -14,3 +14,10 @@ Route::get('/santo/show/{id}', [MainController::class, 'santoShow'])
 // --- DELETE
 Route :: get('/santo/destroy/{id}', [MainController :: class, 'santoDestroy']) 
     -> name('santo.destroy');
+
+// --- CREATE
+Route :: get('/santo/create', [MainController :: class, 'santoCreate'])
+    -> name('santo.create');
+
+Route :: post('/santo/store', [MainController :: class, 'santoStore'])
+    -> name('santo.store');
