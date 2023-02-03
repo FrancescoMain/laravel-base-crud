@@ -7,18 +7,19 @@ use App\Models\Santo;
 
 class MainController extends Controller
 {
+
+    // index 
     public function home() {
 
-        $santi = Santo::orderBy('numero_miracoli') -> get();
-
-        $data = [
-            'santi' => $santi
-        ];
-        return view('pages.home' , $data);
+        $santi = Santo::orderBy('created_at', 'DESC') -> get();
+        // $data = [
+        //     'santi' => $santi
+        // ];
+        return view('pages.home', compact('santi'));
     } 
 
-
-    public function show($id) {
+    // --- SHOW
+    public function santoShow($id) {
 
         $santo = Santo::find($id);
 
@@ -28,5 +29,15 @@ class MainController extends Controller
 
         return view('pages.santo', $data);
     }
+
+    // --- DELETE
+    public function santoDestroy($id) {
+
+        $santo = Santo::find($id);
+        $santo -> delete();
+
+        return redirect() -> route('home');
+    }
 }
+
 
